@@ -7,6 +7,22 @@
 //
 
 import UIKit
+class customCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var customCategoryCell: UIView!
+    
+    
+    @IBAction func colourButtonPressed(_ sender: UIButton) {
+        customCategoryCell.backgroundColor = .systemGreen
+    }
+    
+    @IBAction func ClearColourButtonPressed(_ sender: UIButton) {
+        customCategoryCell.backgroundColor = .none
+    }
+    
+}
+
 
 class ViewController: UIViewController, UITableViewDataSource {
 
