@@ -46,7 +46,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="colourButtonPressed:" destination="yDq-49-GJK" eventType="touchUpInside" id="LbC-or-uV6"/>
+                                                        <action selector="colourButtonPressed:" destination="yDq-49-GJK" eventType="touchUpInside" id="gvg-BL-WLS"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -60,6 +60,13 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="hh5-7f-BDI"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLP-S8-nuR">
+                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Save" id="Uiq-3J-awY"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

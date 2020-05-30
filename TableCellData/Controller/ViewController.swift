@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol CellDelegate {
+
+}
 class customCell: UITableViewCell {
     
     
@@ -15,12 +18,13 @@ class customCell: UITableViewCell {
     
     @IBAction func colourButtonPressed(_ sender: UIButton) {
         customCategoryCell.backgroundColor = .systemGreen
+        
+        
     }
     
     @IBAction func ClearColourButtonPressed(_ sender: UIButton) {
         customCategoryCell.backgroundColor = .none
     }
-    
 }
 
 
@@ -36,6 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("just cheking branch operations")
         loadCategory()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,8 +49,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return category.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath)
+        
         cell.textLabel?.text = category[indexPath.row].name
         return cell
     }
