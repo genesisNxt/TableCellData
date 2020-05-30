@@ -8,7 +8,7 @@
 
 import Foundation
 class Constant {
-    let categoryCell = "categoryCell"
+    let categoryCell = "CategoryCell"
     
     
 }

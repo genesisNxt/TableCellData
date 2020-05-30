@@ -15,6 +15,8 @@
 		4489F3D82481B9DD002FCE0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4489F3D62481B9DD002FCE0B /* LaunchScreen.storyboard */; };
 		4489F3E12481BA23002FCE0B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4489F3E02481BA23002FCE0B /* Category.swift */; };
 		4489F3E52481BCC1002FCE0B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4489F3E42481BCC1002FCE0B /* Constant.swift */; };
+		4489F3E924829125002FCE0B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4489F3E724829125002FCE0B /* CustomCell.swift */; };
+		4489F3EA24829125002FCE0B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4489F3E824829125002FCE0B /* CustomCell.xib */; };
 		C23098379670FBEBEAA1E709 /* Pods_TableCellData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865E69EFBB428835969A8DAD /* Pods_TableCellData.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		4489F3D92481B9DD002FCE0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4489F3E02481BA23002FCE0B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4489F3E42481BCC1002FCE0B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		4489F3E724829125002FCE0B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		4489F3E824829125002FCE0B /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		57E7CA73EF01CC4EAB473F3E /* Pods-TableCellData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableCellData.debug.xcconfig"; path = "Target Support Files/Pods-TableCellData/Pods-TableCellData.debug.xcconfig"; sourceTree = "<group>"; };
 		865E69EFBB428835969A8DAD /* Pods_TableCellData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableCellData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3B9C308CEEFF12FB0CE9D6 /* Pods-TableCellData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableCellData.release.xcconfig"; path = "Target Support Files/Pods-TableCellData/Pods-TableCellData.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				4489F3E624820D15002FCE0B /* Supporting Files */,
 				4489F3D92481B9DD002FCE0B /* Info.plist */,
 				4489F3E42481BCC1002FCE0B /* Constant.swift */,
+				4489F3E724829125002FCE0B /* CustomCell.swift */,
+				4489F3E824829125002FCE0B /* CustomCell.xib */,
 			);
 			path = TableCellData;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 			files = (
 				4489F3D82481B9DD002FCE0B /* LaunchScreen.storyboard in Resources */,
 				4489F3D52481B9DD002FCE0B /* Assets.xcassets in Resources */,
+				4489F3EA24829125002FCE0B /* CustomCell.xib in Resources */,
 				4489F3D32481B9D8002FCE0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +255,7 @@
 				4489F3CC2481B9D8002FCE0B /* AppDelegate.swift in Sources */,
 				4489F3E52481BCC1002FCE0B /* Constant.swift in Sources */,
 				4489F3CE2481B9D8002FCE0B /* SceneDelegate.swift in Sources */,
+				4489F3E924829125002FCE0B /* CustomCell.swift in Sources */,
 				4489F3E12481BA23002FCE0B /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

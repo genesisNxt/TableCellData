@@ -41,8 +41,12 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("just cheking branch operations")
-        tableView.rowHeight = 80.00
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: constant.categoryCell)
+        //let nib = UINib(nibName: CustomCell.nib(), bundle: <#T##Bundle?#>)
+        
+        //print("just cheking branch operations")
+        tableView.rowHeight = 70.00
         loadCategory()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,10 +56,26 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         return category.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath) as! SwipeTableViewCell
-        cell.delegate = self
+        let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath) as! CustomCell
+        
+        
+        
+        
+        //cell.delegate = self
+//        let button = UIButton()
+//
+//        cell.accessoryView = button
+//        button.addTarget(self, action: #selector(didButtonPressed(_ :)), for: .touchUpInside)
+//        //mySwitch.addTarget(self, action: #selector(didChangeSwitch(_ :)), for: .valueChanged)
         cell.textLabel?.text = category[indexPath.row].name
         return cell
+    }
+    @objc func didButtonPressed(_ sender: UIButton){
+        if sender.isTouchInside {
+            print("On")
+        } else {
+            print("it is off")
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
