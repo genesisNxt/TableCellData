@@ -24,7 +24,7 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
-                            <action selector="changeColour:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7hb-dK-dUS"/>
+                            <action selector="changeColour:" destination="H2p-sc-9uM" eventType="touchUpInside" id="uta-Jb-4Xu"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYS-ID-lvi">
@@ -36,14 +36,12 @@
                         </state>
                     </button>
                 </subviews>
-                <connections>
-                    <outlet property="myCell" destination="KGk-i7-Jjw" id="N81-BY-Sfr"/>
-                </connections>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="colour" destination="90g-Mj-D19" id="mt3-hR-rw5"/>
                 <outlet property="data" destination="OYS-ID-lvi" id="PXd-cK-WPJ"/>
+                <outlet property="myCell" destination="H2p-sc-9uM" id="Y14-dG-pVs"/>
             </connections>
             <point key="canvasLocation" x="141" y="93"/>
         </tableViewCell>

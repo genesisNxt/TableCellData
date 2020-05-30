@@ -43,7 +43,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         super.viewDidLoad()
         let nib = UINib(nibName: "CustomCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: constant.categoryCell)
-        //let nib = UINib(nibName: CustomCell.nib(), bundle: <#T##Bundle?#>)
         
         //print("just cheking branch operations")
         tableView.rowHeight = 70.00
@@ -58,9 +57,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath) as! CustomCell
         
-        
-        
-        
         //cell.delegate = self
 //        let button = UIButton()
 //
@@ -70,13 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         cell.textLabel?.text = category[indexPath.row].name
         return cell
     }
-    @objc func didButtonPressed(_ sender: UIButton){
-        if sender.isTouchInside {
-            print("On")
-        } else {
-            print("it is off")
-        }
-    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
