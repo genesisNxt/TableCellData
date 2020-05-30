@@ -7,28 +7,29 @@
 //
 
 import UIKit
-protocol CellDelegate {
+import SwipeCellKit
+//protocol CellDelegate {
+//
+//}
+//class customCell: UITableViewCell {
+//    
+//    
+//    @IBOutlet weak var customCategoryCell: UIView!
+//    
+//    
+//    @IBAction func colourButtonPressed(_ sender: UIButton) {
+//        customCategoryCell.backgroundColor = .systemGreen
+//        
+//        
+//    }
+//    
+//    @IBAction func ClearColourButtonPressed(_ sender: UIButton) {
+//        customCategoryCell.backgroundColor = .none
+//    }
+//}
 
-}
-class customCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var customCategoryCell: UIView!
-    
-    
-    @IBAction func colourButtonPressed(_ sender: UIButton) {
-        customCategoryCell.backgroundColor = .systemGreen
-        
-        
-    }
-    
-    @IBAction func ClearColourButtonPressed(_ sender: UIButton) {
-        customCategoryCell.backgroundColor = .none
-    }
-}
 
-
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,6 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("just cheking branch operations")
+        tableView.rowHeight = 80.00
         loadCategory()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,10 +52,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         return category.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
         cell.textLabel?.text = category[indexPath.row].name
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
@@ -100,4 +105,27 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
 }
+// MARK:- swipe cell delegate method
+extension ViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
 
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+            self.category.remove(at: indexPath.row)
+            print("item deleted")
+         //tableView.reloadData()
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete-icon")
+
+        return [deleteAction]
+    }
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        //options.transitionStyle = .border
+        return options
+    }
+}
