@@ -11,7 +11,8 @@ import UIKit
 class CustomCell: UITableViewCell {
 
     
-    @IBOutlet weak var myCell: CustomCell!
+    
+    @IBOutlet weak var myCell: UIView!
     @IBOutlet weak var colour: UIButton!
     
     @IBOutlet weak var data: UIButton!

@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     var category = [Category]()
     let constant = Constant()
+    var indexNumber: Int = 0
     
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("category.plist")
     
@@ -56,17 +57,24 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: constant.categoryCell , for: indexPath) as! CustomCell
-        
-        //cell.delegate = self
-//        let button = UIButton()
-//
-//        cell.accessoryView = button
-//        button.addTarget(self, action: #selector(didButtonPressed(_ :)), for: .touchUpInside)
-//        //mySwitch.addTarget(self, action: #selector(didChangeSwitch(_ :)), for: .valueChanged)
+        //cell.backgroundColor = UIColor(named: category[indexPath.row].color)
+        cell.colour.tag = indexPath.row
         cell.textLabel?.text = category[indexPath.row].name
+        //let myText = cell.textLabel?.text
+        //cell.backgroundColor = UIColor(named: category[indexPath.row].color)
+        
+        cell.colour.addTarget(self, action:#selector(savingColour(_:)), for: .touchUpInside)
         return cell
     }
-    
+    @objc func savingColour(_ sender: UIButton){
+
+        let index = sender.tag
+        //category[index].color = ".systemGreen" // Not working
+        category[index].name = "Ravinder"
+        
+       saveCategory()
+        
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -77,6 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             let newCategory = Category()
             newCategory.name = textField.text!
             newCategory.done = false
+            //newCategory.color = ".none"
             self.category.append(newCategory)
             self.saveCategory()
             
