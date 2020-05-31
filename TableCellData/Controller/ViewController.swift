@@ -35,7 +35,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     var category = [Category]()
     let constant = Constant()
-    var indexNumber: Int = 0
     
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("category.plist")
     
@@ -61,8 +60,12 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         cell.colour.tag = indexPath.row
         cell.textLabel?.text = category[indexPath.row].name
         //let myText = cell.textLabel?.text
+        cell.backgroundColor = UIColor(named: "\(category[indexPath.row].color)")
         //cell.backgroundColor = UIColor(named: category[indexPath.row].color)
-        
+        let stringColor = UIColor(named: "\(category[indexPath.row].color)")
+        //let myString = category[indexPath.row].color
+        //print("\(UIColor(named: category[indexPath.row].color))")
+        print("\(stringColor)")
         cell.colour.addTarget(self, action:#selector(savingColour(_:)), for: .touchUpInside)
         return cell
     }
@@ -71,6 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         let index = sender.tag
         //category[index].color = ".systemGreen" // Not working
         category[index].name = "Ravinder"
+        category[index].color = ".green"
         
        saveCategory()
         
@@ -85,7 +89,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             let newCategory = Category()
             newCategory.name = textField.text!
             newCategory.done = false
-            //newCategory.color = ".none"
+            newCategory.color = ".none"
             self.category.append(newCategory)
             self.saveCategory()
             

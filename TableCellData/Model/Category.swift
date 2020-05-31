@@ -10,6 +10,6 @@ import Foundation
 class Category: Codable {
     var name: String = ""
     var done: Bool = false
-    //var color: String = ""
+    var color: String = ""
     
 }

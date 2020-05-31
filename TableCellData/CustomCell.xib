@@ -23,9 +23,6 @@
                         <state key="normal" title="Colour">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
-                        <connections>
-                            <action selector="changeColour:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RgE-1k-iF9"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYS-ID-lvi">
                         <rect key="frame" x="265" y="7" width="32" height="30"/>
